@@ -18,3 +18,4 @@ class Solution(object):
                     return j
                 else:
                     i = (i + j)>>1
+        return x
