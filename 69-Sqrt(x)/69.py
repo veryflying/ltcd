@@ -7,7 +7,7 @@ class Solution(object):
         f = 0
         i = 1
         j = 1
-        while i < x:
+        while i <= x:
             if i*i == x:
                 return i
             elif i*i < x:
