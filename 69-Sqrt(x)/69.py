@@ -5,8 +5,16 @@ class Solution(object):
         :rtype: int
         """
         f = 0
-        for i in xrange(x):
-            if i*i > x:
-                return i-1
-            elif i*i == x:
+        i = 1
+        j = 1
+        while i < x:
+            if i*i == x:
                 return i
+            elif i*i < x:
+                j = i
+                i = i<<1
+            elif i*i > x:
+                if i == j+1:
+                    return j
+                else:
+                    i = (i + j)>>1
