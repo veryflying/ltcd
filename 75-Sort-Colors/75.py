@@ -16,7 +16,7 @@ class Solution(object):
                 j -= 1
             else:
                 break
-        p = i=1
+        p = i+1
         while p <= j:
             if nums[p] == 2:
                 nums[j] = 2
