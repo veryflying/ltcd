@@ -24,7 +24,7 @@ class Solution(object):
                 j -= 1
                 p += 1
             elif nums[p] == 0:
-                nums[i] = 1
+                nums[i] = 0
                 nums[p] = 1
                 i += 1
                 p += 1
