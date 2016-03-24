@@ -9,8 +9,8 @@ class Solution(object):
             for j in xrange(len(matrix[0])):
                 if matrix[i][j] == 0:
                     tmp.append((i, j))
-        for i in xrange(len(tmp)):
+        for i in tmp:
             for j in xrange(len(matrix[0])):
-                matrix[i][j] = 0
+                matrix[i[0]][j] = 0
             for j in xrange(len(matrix)):
-                matrix[j][i] = 0
+                matrix[j][i[1]] = 0
