@@ -29,5 +29,7 @@ class Solution(object):
                 nums[i] = 0
                 nums[p] = t
                 i += 1
+                if t == 0:
+                    p += 1
             else:
                 p += 1
