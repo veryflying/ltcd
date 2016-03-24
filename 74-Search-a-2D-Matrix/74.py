@@ -10,9 +10,9 @@ class Solution(object):
         while i <= j:
             m = (i+j)/2
             r, c = m/len(matrix[0]), m%len(matrix[0])
-            if matrix[r][c] > target:
+            if matrix[r][c] < target:
                 i = m + 1
-            elif matrix[r][c] < target:
+            elif matrix[r][c] > target:
                 j = m - 1
             else:
                 return True
