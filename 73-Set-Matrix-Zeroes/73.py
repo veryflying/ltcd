@@ -9,7 +9,7 @@ class Solution(object):
             for j in xrange(len(matrix[0])):
                 if matrix[i][j] == 0:
                     tmp.append((i, j))
-        for i in tmp:
+        for i in xrange(len(tmp)):
             for j in xrange(len(matrix[0])):
                 matrix[i][j] = 0
             for j in xrange(len(matrix)):
