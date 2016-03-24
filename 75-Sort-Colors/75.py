@@ -16,6 +16,7 @@ class Solution(object):
                 j -= 1
             else:
                 break
+
         p = i
         while p <= j:
             if nums[p] == 2:
@@ -23,12 +24,10 @@ class Solution(object):
                 nums[j] = 2
                 nums[p] = t
                 j -= 1
-                p += 1
             elif nums[p] == 0:
                 t = nums[i]
                 nums[i] = 0
                 nums[p] = t
                 i += 1
-                p += 1
             else:
                 p += 1
