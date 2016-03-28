@@ -4,16 +4,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if len(nums) == 0:
-            return 0
-        c = 1
-        tc = 1
-        for i in xrange(1, len(nums)):
-            if nums[i] == nums[i-1]:
-                tc += 1
-                if tc <= 2:
+        c = 0
+        i = 0
+        n = len(nums)
+        while i < n - 1:
+            if nums[i] == nums[i+1]:
+                if c >= 1:
+                    nums.remove(nums[i])
+                    n -= 1
+                else:
                     c += 1
+                    i += 1
             else:
-                tc = 1
-                c += 1
-        return c
+                c = 0
+                i += 1
+        return len(nums)
