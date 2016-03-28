@@ -7,7 +7,7 @@ class Solution(object):
         """
         tmp = [[0 for i in xrange(len(board[0]))] for j in xrange(len(board))]
         def dfs(i, j, k):
-            if k == len(word)-1 and board[i][j] == word[k]:
+            if k == len(word)-1 and board[i][j] == word[k] and tmp[i][j] != 1:
                 return True
             if tmp[i][j] == 1:
                 return False
