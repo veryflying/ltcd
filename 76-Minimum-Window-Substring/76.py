@@ -30,4 +30,7 @@ class Solution(object):
                     else:
                         p += 1
             q += 1
-        return s[mi: mi+m]
+        if m >= 1<<31:
+            return ''
+        else:
+            return s[mi: mi+m]
