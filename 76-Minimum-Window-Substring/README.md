@@ -1,1 +1,1 @@
-A这道题真是。。。
+A这道题真是。。。参考了http://www.cnblogs.com/lichen782/p/leetcode_minimum_window_substring_3.html
