@@ -23,10 +23,9 @@ class Solution(object):
                         mi = p
                     if s[p] in need:
                         has[s[p]] -= 1
-                        if has[s[q]] <= need[s[q]]:
+                        if has[s[p]] <= need[s[p]]:
                             c -= 1
-                        else:
-                            p += 1
+                        p += 1
                     else:
                         p += 1
             q += 1
