@@ -13,10 +13,12 @@ class Solution(object):
         def delete_next(node_i):
             t = node_i.next
             node_i.next = t.next
-        p = head
-        while p is not None and p.next is not None:
-            if p.val == p.next.val:
+        p = ListNode(None)
+        p.next = head
+        head = p
+        while p.next is not None and p.next.next is not None:
+            if p.next.next.val == p.next.val:
                 delete_next(p)
             else:
                 p = p.next
-        return head
+        return head.next
