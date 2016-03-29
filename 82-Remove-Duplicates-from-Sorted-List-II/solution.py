@@ -14,7 +14,7 @@ class Solution(object):
             t = node_i.next
             node_i.next = t.next
         p = head
-        while p.next is not None and p is not None:
+        while p is not None and p.next is not None:
             if p.val == p.next.val:
                 delete_next(p)
             else:
