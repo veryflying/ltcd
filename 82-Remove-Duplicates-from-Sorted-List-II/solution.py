@@ -16,10 +16,19 @@ class Solution(object):
         p = ListNode(None)
         p.next = head
         head = p
+        t = p.next.val
+        f = 0
         while p.next is not None and p.next.next is not None:
-            if p.next.next.val == p.next.val:
-                delete_next(p)
+            if t == p.next.next.val:
+                f = 1
                 delete_next(p)
             else:
-                p = p.next
+                if f == 1:
+                    delete_next(p)
+                    f = 0
+                else:
+                    p = p.next
+                t = p.next.val
+        if f == 1:
+            delete_next(p)
         return head.next
