@@ -19,6 +19,7 @@ class Solution(object):
         while p.next is not None and p.next.next is not None:
             if p.next.next.val == p.next.val:
                 delete_next(p)
+                delete_next(p)
             else:
                 p = p.next
         return head.next
