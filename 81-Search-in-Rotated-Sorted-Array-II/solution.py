@@ -14,7 +14,7 @@ class Solution(object):
                 if target > nums[i]:
                     j = m - 1
                 elif target == nums[i]:
-                    return i
+                    return True
                 else:
                     if nums[m] > nums[i]:
                         i = m + 1
@@ -45,7 +45,7 @@ class Solution(object):
                     if target > nums[i]:
                         j = m - 1
                     elif target == nums[i]:
-                        return i
+                        return True
                     else:
                         i = m + 1
         return False
