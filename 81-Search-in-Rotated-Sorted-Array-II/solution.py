@@ -19,7 +19,13 @@ class Solution(object):
                     if nums[m] > nums[i]:
                         i = m + 1
                     elif nums[m] == nums[i]:
-                        return False
+                        k = i
+                        while k <= m:
+                            if nums[k] != nums[m]:
+                                return False
+                            k += 1
+                        if k > m:
+                            i = m + 1
                     else:
                         j = m - 1
             else:
