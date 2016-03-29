@@ -11,19 +11,35 @@ class Solution(object):
             if nums[m] == target:
                 return True
             elif nums[m] > target:
-                if target >= nums[i]:
+                if target > nums[i]:
                     j = m - 1
+                elif target == nums[i]:
+                    return i
                 else:
-                    if nums[m] >= nums[i]:
+                    if nums[m] > nums[i]:
                         i = m + 1
+                    elif nums[m] == nums[i]:
+                        return False
                     else:
                         j = m - 1
             else:
-                if nums[m] >= nums[i]:
+                if nums[m] > nums[i]:
                     i = m + 1
+                elif nums[m] == nums[i]:
+                    k = i
+                    while k <= m:
+                        if nums[k] != nums[i]:
+                            j = m - 1
+                            break
+                        else:
+                            k += 1
+                    if k > m:
+                        i = m + 1
                 else:
-                    if target >= nums[i]:
+                    if target > nums[i]:
                         j = m - 1
+                    elif target == nums[i]:
+                        return i
                     else:
                         i = m + 1
         return False
