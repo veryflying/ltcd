@@ -1,3 +1,4 @@
+
 class Solution {
     int [][]tmp;
     int dict(String s, int i, String t, int j){
@@ -17,20 +18,18 @@ class Solution {
     public int numDistinct(String s, String t) {
         tmp = new int[s.length()+1][t.length()+1];
         for (int i = 0; i <= s.length(); i++) {
-            tmp[i][t.length()] = 1;
+            tmp[i][0] = 1;
         }
-        for (int j = t.length()-1; j >= 0 ; j--) {
-            for (int i = s.length()-1; i >= 0; ) {
+        for (int j = 0, tlen = t.length(); j < tlen ; j++) {
+            for (int i = 0, slen = s.length(); i < slen; i++) {
                 if (s.charAt(i) == t.charAt(j)){
-                    tmp[i][j] += tmp[i+1][j+1] + tmp[i+1][j];
-                    i--;
+                    tmp[i+1][j+1] = tmp[i][j] + tmp[i][j+1];
                 }
                 else {
-                    tmp[i][j] += tmp[i+1][j];
-                    i--;
+                    tmp[i+1][j+1] = tmp[i][j+1];
                 }
             }
         }
-        return tmp[0][0];
+        return tmp[s.length()][t.length()];
     }
 }
