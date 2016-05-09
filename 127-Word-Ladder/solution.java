@@ -16,7 +16,7 @@ class Solution {
         Queue<String> q = new LinkedList<>();
         q.add(beginWord);
         q.add("#");
-        while (q.size() != 1){
+        while (true){
             String t = q.poll();
             if (t.equals("#"))
                 if (q.size() == 0)
@@ -35,6 +35,8 @@ class Solution {
                         q.offer(s.toString());
                         wordList.remove(s.toString());
                         hm.put(s.toString(), hm.get(t)+1);
+                        if (endWord.equals(s.toString()))
+                            break;
                     }
                     s.setCharAt(i, t.charAt(i));
                 }
